@@ -46,6 +46,7 @@ namespace practica_aplicaciones_win_1
                 txtNombre.BackColor = Color.Red;
             }else
             {
+                // Toma el color original del control-
                 txtNombre.BackColor = System.Drawing.SystemColors.Control;
             }
         }
@@ -88,6 +89,17 @@ namespace practica_aplicaciones_win_1
             lblTitulo.Cursor = Cursors.Arrow;
         }
 
-        
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar < 48 || e.KeyChar > 59) && e.KeyChar != 8)
+                e.Handled = true;
+        }
+
+        private void txtMultiline_Leave(object sender, EventArgs e)
+        {
+            // Manejar el evento Leave del nuevo Control TextBox. Para mostrar cuantos
+            // caracteres se ingresaron una vez que el control pierde el foco.
+            MessageBox.Show("Tiene " + txtMultiline.Text.Length + " Caracteres");
+        }
     }
 }

@@ -33,6 +33,7 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtMultiline = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnInicio
@@ -83,6 +84,17 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(122, 20);
             this.txtNombre.TabIndex = 3;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
+            // 
+            // txtMultiline
+            // 
+            this.txtMultiline.Location = new System.Drawing.Point(484, 454);
+            this.txtMultiline.Multiline = true;
+            this.txtMultiline.Name = "txtMultiline";
+            this.txtMultiline.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtMultiline.Size = new System.Drawing.Size(122, 78);
+            this.txtMultiline.TabIndex = 4;
+            this.txtMultiline.Leave += new System.EventHandler(this.txtMultiline_Leave);
             // 
             // frmInicio
             // 
@@ -90,6 +102,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(800, 544);
+            this.Controls.Add(this.txtMultiline);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTitulo);
@@ -114,6 +127,7 @@
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtMultiline;
     }
 }
 
